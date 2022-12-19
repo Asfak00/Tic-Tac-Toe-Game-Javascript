@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  list-style: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(rgb(192, 242, 233), rgba(7, 187, 223, 0.692));
+}
+
+/* navigation menu styling */
+
+nav {
+  width: 100vw;
+  height: 40px;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+nav ul li {
+  margin-left: 13%;
+}
+
+/* game body styling */
+
+.gameContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: repeat(3, 10vw);
+  grid-template-columns: repeat(3, 10vw);
+}
+
+.box {
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.line {
+  width: 30vw;
+  height: 3px;
+  background-color: rgb(175, 2, 2);
+  position: absolute;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.box:hover {
+  background-color: rgb(163, 223, 247);
+}
+
+.info {
+  margin-left: 3rem;
+}
+
+.info h2 {
+  margin-bottom: 0.5rem;
+}
+
+.turn {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+  color: rgb(226, 84, 41);
+}
+
+#reset {
+  padding: 0.2rem 1rem;
+  font-size: 0.8rem;
+  background-color: rgb(12, 114, 203);
+  color: white;
+  border: 1px solid rgb(17, 194, 221);
+  border-radius: 12px;
+  margin-left: 0.5rem;
+  transition: 0.3s ease-in;
+}
+
+#reset:hover {
+  background-color: white;
+  color: black;
+}
+
+/* some utility classes for border */
+
+.bt-0 {
+  border-top: 0;
+}
+
+.bb-0 {
+  border-bottom: 0;
+}
+
+.br-0 {
+  border-right: 0;
+}
+
+.bl-0 {
+  border-left: 0;
+}
+
+/* Responsive part start here */
+@media screen and (max-width: 480px) {
+  .gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container {
+    grid-template-rows: repeat(3, 15vw);
+    grid-template-columns: repeat(3, 15vw);
+  }
+
+  .info {
+    margin-top: 2rem;
+    margin-left: 0rem;
+  }
+
+  .info h2 {
+    font-size: 1.6rem;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .turn {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .button {
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+
+  #reset {
+    width: 40%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    margin-left: 0rem;
+  }
+}
